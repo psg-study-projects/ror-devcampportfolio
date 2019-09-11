@@ -1,1 +1,7 @@
 $ rails g controller Pages home about contact
+$ rails g model Skill title:string percent_utilized:integer
+$ rails db:migrate
+$ rails c
+2.4.4 :001 > Skill.create!(title: "Rails", percent_utilized: 75)
+...
+2.4.4 :005 > Skill.all
