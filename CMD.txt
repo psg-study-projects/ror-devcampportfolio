@@ -5,3 +5,13 @@ $ rails c
 2.4.4 :001 > Skill.create!(title: "Rails", percent_utilized: 75)
 ...
 2.4.4 :005 > Skill.all
+
+# Git Merge w/o PR
+$ git commit -m "Integrated skills via model generators"
+$ git checkout master
+$ git merge model-generator
+$ git push
+
+# Resource generator is like a skinny scaffold
+$ rails g resource Portfolio  title:string subtitle:string body:text main_image:text thumb_image:text
+$ rails db:migrate
