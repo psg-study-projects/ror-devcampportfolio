@@ -16,7 +16,8 @@ $ git push
 $ rails g resource Portfolio  title:string subtitle:string body:text main_image:text thumb_image:text
 $ rails db:migrate
 
-%57 Building out a Seeds File for Generating Dynamic Sample Data
+%Section 6
+
 rails c
 Running via Spring preloader in process 4901
 Loading development environment (Rails 5.2.3)
@@ -26,3 +27,5 @@ Loading development environment (Rails 5.2.3)
 
 # NOTE: this resets migrations, runs them, then runs seeders !! (ie, from scratch)
 $ rails db:setup
+
+$ rake routes
