@@ -15,3 +15,14 @@ $ git push
 # Resource generator is like a skinny scaffold
 $ rails g resource Portfolio  title:string subtitle:string body:text main_image:text thumb_image:text
 $ rails db:migrate
+
+%57 Building out a Seeds File for Generating Dynamic Sample Data
+rails c
+Running via Spring preloader in process 4901
+Loading development environment (Rails 5.2.3)
+2.4.4 :001 > Blog.create!(title: 'something here', body: 'foo bar')
+2.4.4 :002 > Blog.count
+2.4.4 :003 > Blog.last
+
+# NOTE: this resets migrations, runs them, then runs seeders !! (ie, from scratch)
+$ rails db:setup
