@@ -29,3 +29,15 @@ Loading development environment (Rails 5.2.3)
 $ rails db:setup
 
 $ rake routes
+
+---
+
+%%% Friendly IDs (aka slugs)
+
+$ gem install friendly_id
+# add to Gemfile
+$ bundle install
+$ rails generate friendly_id
+$ rails db:migrate
+$ rails g migration add_slug_to_blogs slug:string:uniq
+$ rails db:migrate
