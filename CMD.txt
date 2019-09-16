@@ -15,3 +15,33 @@ $ git push
 # Resource generator is like a skinny scaffold
 $ rails g resource Portfolio  title:string subtitle:string body:text main_image:text thumb_image:text
 $ rails db:migrate
+
+%Section 6
+
+rails c
+Running via Spring preloader in process 4901
+Loading development environment (Rails 5.2.3)
+2.4.4 :001 > Blog.create!(title: 'something here', body: 'foo bar')
+2.4.4 :002 > Blog.count
+2.4.4 :003 > Blog.last
+
+# NOTE: this resets migrations, runs them, then runs seeders !! (ie, from scratch)
+$ rails db:setup
+
+$ rake routes
+
+---
+
+%%% Friendly IDs (aka slugs)
+
+$ gem install friendly_id
+# add to Gemfile
+$ bundle install
+$ rails generate friendly_id
+$ rails db:migrate
+$ rails g migration add_slug_to_blogs slug:string:uniq
+$ rails db:migrate
+
+
+byebug
+
