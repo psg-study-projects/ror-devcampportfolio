@@ -16,11 +16,14 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
+    # hardcode for now
+    # build => create 3 types of the technologies & make available to the form 
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
-    # whitelisted set of params...
-    @portfolio_item = Portfolio.new( params.require(:portfolio).permit(:title, :subtitle, :body) )
+    # whitelisted set of params...(aka 'strong' params ??)
+    @portfolio_item = Portfolio.new( params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]) )
 
     respond_to do |format|
       if @portfolio_item.save
