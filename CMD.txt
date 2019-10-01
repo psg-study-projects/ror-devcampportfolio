@@ -54,6 +54,8 @@ $ rails g migration add_topic_reference_to_blogs topic:references
 $ rails db:migrate
 
 
+$ rails g migration add_badge_to_skills badge:text
+$ rails db:migrate
 ---
 
 
@@ -91,3 +93,6 @@ Loading development environment (Rails 5.2.3)
  Portfolio.last.subtitle
  Portfolio.where(subtitle: 'Ruby on Rails')
  Portfolio.where(subtitle: 'Ruby on Rails').count
+
+
+
