@@ -55,3 +55,11 @@ puts "Portfolio items created"
   )
 end
 puts "Portfolio items created"
+
+# Technologies
+3.times do |iter|
+  Portfolio.last.technologies.create!(
+    name: "Techology #{iter}"
+  )
+end
+puts "Technology records created"
