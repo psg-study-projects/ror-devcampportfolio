@@ -54,6 +54,12 @@ $ rails g migration add_topic_reference_to_blogs topic:references
 $ rails db:migrate
 
 
+$ rails g migration add_badge_to_skills badge:text
+$ rails db:migrate
+
+$ rails g model Technology name:string portfolio:references
+$ rails db:migrate
+
 ---
 
 
@@ -86,3 +92,12 @@ Loading development environment (Rails 5.2.3)
   Blog Load (0.9ms)  SELECT  "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1  [["LIMIT", 1]]
   Topic Load (0.3ms)  SELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
  => #<Topic id: 1, title: "Ruby Prog", created_at: "2019-09-28 02:20:12", updated_at: "2019-09-28 02:20:12">
+
+ ---
+ Portfolio.last.subtitle
+ Portfolio.where(subtitle: 'Ruby on Rails')
+ Portfolio.where(subtitle: 'Ruby on Rails').count
+
+
+
+2.4.4 :005 > Portfolio.create!(title: "Web app", subtitle: "jafafa", body: "jkdafafa", technologies_attributes: [{name: 'Ruby'}, {name: 'Rails'}, {name: 'Angular'}] )
